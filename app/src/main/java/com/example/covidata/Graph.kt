@@ -2,11 +2,11 @@ package com.example.covidata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_graph.*
 
 class Graph : AppCompatActivity() {
 
@@ -30,5 +30,21 @@ class Graph : AppCompatActivity() {
                 val position = recyclerView.layoutManager?.getPosition(element)
             }
         })
+
+        leftArrow.setOnClickListener {
+            val element = snapHelper.findSnapView(countryList.layoutManager) ?: throw Exception("Element not found")
+            val position = countryList.layoutManager?.getPosition(element) ?: throw Exception("Position not found")
+            if (position != 0) {
+                countryList.scrollToPosition(position - 1)
+            }
+        }
+
+        rightArrow.setOnClickListener {
+            val element = snapHelper.findSnapView(countryList.layoutManager) ?: throw Exception("Element not found")
+            val position = countryList.layoutManager?.getPosition(element) ?: throw Exception("Position not found")
+            if (position != countryListData.size) {
+                countryList.scrollToPosition(position + 1)
+            }
+        }
     }
 }
