@@ -4,4 +4,12 @@
     <string name="Appby">"App by: "</string>
     <string name="Authors">"corentin.lefevre-pontalis\nwassim.ajili\nphilippe.qiao"</string>
     <string name="creditEpita">"Made at Epita"</string>
+    <string name="DataBtn">Data</string>
+    <string name="GraphBtn">Graph</string>
+    <string name="MysteryBtn">"?"</string>
+    <string name="totals_title">Totals</string>
+    <string name="World">World:</string>
+    <string name="data">"Confirmed: 0\nDeaths: 0\nRecovered: 0"</string>
+    <string name="ByCountry">By Country:</string>
+
 </resources>
