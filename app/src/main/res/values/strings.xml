@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Covidata</string>
+    <string name="main_title">Covidata 2019</string>
+    <string name="Appby">"App by: "</string>
+    <string name="Authors">"corentin.lefevre-pontalis\nwassim.ajili\nphilippe.qiao"</string>
+    <string name="creditEpita">"Made at Epita"</string>
 </resources>
