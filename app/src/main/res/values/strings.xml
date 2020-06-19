@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Covidata</string>
     <string name="main_title">Covidata 2019</string>
+    <string name="description">This app show data about Covid</string>
     <string name="Appby">"App by: "</string>
     <string name="Authors">"corentin.lefevre-pontalis\nwassim.ajili\nphilippe.qiao"</string>
     <string name="creditEpita">"Made at Epita"</string>
@@ -11,5 +12,7 @@
     <string name="World">World:</string>
     <string name="data">"Confirmed: 0\nDeaths: 0\nRecovered: 0"</string>
     <string name="ByCountry">By Country:</string>
-
+    <string name="confirmed">Confirmed</string>
+    <string name="deaths">Deaths</string>
+    <string name="recovered">Recovered</string>
 </resources>

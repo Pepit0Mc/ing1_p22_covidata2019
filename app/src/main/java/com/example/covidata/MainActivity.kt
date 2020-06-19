@@ -15,9 +15,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val dataBtn = findViewById<Button>(R.id.dataBtn)
-        dataBtn.setOnClickListener(View.OnClickListener() {
+        dataBtn.setOnClickListener{
             val intent = Intent(this, GlobalData::class.java)
             startActivity(intent)
-        })
+        }
+
+        val graphBtn = findViewById<Button>(R.id.graphBtn)
+        graphBtn.setOnClickListener {
+            val intent = Intent(this, Graph::class.java)
+            startActivity(intent)
+        }
     }
 }
