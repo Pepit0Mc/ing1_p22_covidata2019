@@ -2,8 +2,10 @@ package com.example.covidata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 
 class Graph : AppCompatActivity() {
@@ -11,13 +13,22 @@ class Graph : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph)
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val countryList = findViewById<RecyclerView>(R.id.CountryList);
         val countryListData : MutableList<String> = arrayListOf("France", "Spain", "England")
-        countryList.layoutManager = layoutManager
+        countryList.adapter = CountryGraphAdapter(this@Graph, countryListData)
         countryList.setHasFixedSize(true)
         countryList.addItemDecoration(DividerItemDecoration(this@Graph, LinearLayoutManager.HORIZONTAL))
-        countryList.adapter = CountryAdapter(this@Graph, countryListData)
+        countryList.layoutManager = layoutManager
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(countryList)
+
+        countryList.addOnScrollListener(object:RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                val element = snapHelper.findSnapView(recyclerView.layoutManager) ?: return
+                val position = recyclerView.layoutManager?.getPosition(element)
+            }
+        })
     }
 }

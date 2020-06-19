@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".Graph">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="15dp"
+        android:contentDescription="@string/World"
+        app:layout_constraintBottom_toBottomOf="@+id/CountryList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CountryList"
+        app:srcCompat="@drawable/arrow_right" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:contentDescription="@string/World"
+        app:layout_constraintBottom_toBottomOf="@+id/CountryList"
+        app:layout_constraintStart_toStartOf="@+id/CountryList"
+        app:layout_constraintTop_toTopOf="@+id/CountryList"
+        app:srcCompat="@drawable/arrow_left" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/CountryList"
         android:layout_width="0dp"
