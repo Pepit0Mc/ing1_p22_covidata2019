@@ -3,6 +3,7 @@ package com.example.covidata
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,7 +33,7 @@ class GlobalData : AppCompatActivity() {
 
         val callbackGlobal:Callback<Global> = object : Callback<Global> {
             override fun onFailure(call: Call<Global>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(applicationContext,"Couldn't access the API, check your internet connection", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<Global>, response: Response<Global>) {
@@ -45,7 +46,7 @@ class GlobalData : AppCompatActivity() {
 
         val callbackCountries:Callback<List<Country>> = object : Callback<List<Country>> {
             override fun onFailure(call: Call<List<Country>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(applicationContext,"Couldn't access the API, check your internet connection", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
