@@ -16,4 +16,7 @@ interface WSInterface {
     fun getCountryData(@Path("country") country: String,
                        @Query("from") from: String,
                        @Query("to") to: String) : Call<List<CountryStat>>
+
+    @GET("total/country/{country}")
+    fun getCountryAllData(@Path("country") country: String) : Call<List<CountryStat>>
 }
