@@ -24,8 +24,9 @@ class CountryData : AppCompatActivity() {
         setContentView(R.layout.activity_country_data)
 
         val country : String = intent.getStringExtra(COUNTRY)
+        val countryName : String = intent.getStringExtra(COUNTRYNAME)
         val countryTextView = findViewById<TextView>(R.id.country_textView)
-        countryTextView.text = country
+        countryTextView.text = countryName
         val url = "https://api.covid19api.com/"
         val jsonConverter = GsonConverterFactory.create(GsonBuilder().create())
         val retrofitClient = Retrofit.Builder().baseUrl(url).addConverterFactory(jsonConverter).build()
@@ -44,7 +45,6 @@ class CountryData : AppCompatActivity() {
                         StatCountryTextView.text = "No data available"
                     else {
                         val dateData: CountryStat = countryData[0]
-                        countryTextView.text = dateData.Country
                         StatCountryTextView.text =
                             "Confirmed: ${dateData.Confirmed}\nDeaths: ${dateData.Deaths}\nRecovered: ${dateData.Recovered}"
                     }

@@ -2,6 +2,7 @@ package com.example.covidata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -66,12 +67,14 @@ class Graph : AppCompatActivity() {
 
         val callbackCountryData: Callback<List<CountryStat>> = object : Callback<List<CountryStat>> {
             override fun onFailure(call: Call<List<CountryStat>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(applicationContext,"Couldn't access the API, check your internet connection", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<List<CountryStat>>, response: Response<List<CountryStat>>) {
                 if (response.code() == 200 && response.body() != null) {
                     countryStat = response.body() as List<CountryStat>
+                    if (countryStat.size == 0)
+                        Toast.makeText(applicationContext,"No data for this country", Toast.LENGTH_SHORT).show()
                     displayGraph()
                 }
             }
@@ -79,7 +82,7 @@ class Graph : AppCompatActivity() {
 
         val callbackCountries: Callback<List<Country>> = object : Callback<List<Country>> {
             override fun onFailure(call: Call<List<Country>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(applicationContext,"Couldn't access the API, check your internet connection", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {

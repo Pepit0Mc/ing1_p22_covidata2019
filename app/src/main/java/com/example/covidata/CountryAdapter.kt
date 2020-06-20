@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 const val COUNTRY = "com.example.covidata.COUNTRY"
+const val COUNTRYNAME = "com.example.covidata.COUNTRYNAME"
 
 class CountryAdapter(val context: Activity, val data: List<Country>) : RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
     class ViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
@@ -31,6 +32,7 @@ class CountryAdapter(val context: Activity, val data: List<Country>) : RecyclerV
         holder.countryTextView.setOnClickListener {
             val intent = Intent(context, CountryData::class.java).apply {
                 putExtra(COUNTRY, country.Slug)
+                putExtra(COUNTRYNAME, country.Country)
             }
             context.startActivity(intent)
         }

@@ -7,7 +7,7 @@
     <string name="creditEpita">"Made at Epita"</string>
     <string name="DataBtn">Data</string>
     <string name="GraphBtn">Graph</string>
-    <string name="MysteryBtn">"?"</string>
+    <string name="MysteryBtn">"About Covid-19"</string>
     <string name="totals_title">Totals</string>
     <string name="World">World:</string>
     <string name="data">"Confirmed: -\nDeaths: -\nRecovered: -"</string>

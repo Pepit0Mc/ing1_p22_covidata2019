@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,11 @@ class MainActivity : AppCompatActivity() {
         val graphBtn = findViewById<Button>(R.id.graphBtn)
         graphBtn.setOnClickListener {
             val intent = Intent(this, Graph::class.java)
+            startActivity(intent)
+        }
+
+        mysteryBtn.setOnClickListener {
+            val intent = Intent(this, Mystery::class.java)
             startActivity(intent)
         }
     }
