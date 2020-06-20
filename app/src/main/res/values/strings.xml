@@ -10,7 +10,7 @@
     <string name="MysteryBtn">"?"</string>
     <string name="totals_title">Totals</string>
     <string name="World">World:</string>
-    <string name="data">"Confirmed: 0\nDeaths: 0\nRecovered: 0"</string>
+    <string name="data">"Confirmed: -\nDeaths: -\nRecovered: -"</string>
     <string name="ByCountry">By Country:</string>
     <string name="confirmed">Confirmed</string>
     <string name="deaths">Deaths</string>

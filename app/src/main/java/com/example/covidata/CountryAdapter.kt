@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 const val COUNTRY = "com.example.covidata.COUNTRY"
 
-class CountryAdapter(val context: Activity, val data: List<String>) : RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
+class CountryAdapter(val context: Activity, val data: List<Country>) : RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
     class ViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
         val countryTextView: TextView = itemview.findViewById(R.id.list_country_item_country)
     }
@@ -26,11 +26,11 @@ class CountryAdapter(val context: Activity, val data: List<String>) : RecyclerVi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val country : String = data[position]
-        holder.countryTextView.text = country
+        val country : Country = data[position]
+        holder.countryTextView.text = country.Country
         holder.countryTextView.setOnClickListener {
             val intent = Intent(context, CountryData::class.java).apply {
-                putExtra(COUNTRY, country)
+                putExtra(COUNTRY, country.Slug)
             }
             context.startActivity(intent)
         }

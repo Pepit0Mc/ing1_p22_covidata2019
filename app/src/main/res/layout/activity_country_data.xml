@@ -35,7 +35,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/StatCountryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/data"
