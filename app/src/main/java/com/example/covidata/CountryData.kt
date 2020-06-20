@@ -12,6 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 
 class CountryData : AppCompatActivity() {
@@ -46,10 +47,12 @@ class CountryData : AppCompatActivity() {
             }
         }
 
-        calendarView.setOnDateChangeListener{ calendarView: CalendarView, i: Int, i1: Int, i2: Int ->
+        val DatechangeListener = CalendarView.OnDateChangeListener{ _: CalendarView, i: Int, i1: Int, i2: Int ->
             val date = "" + i + "-" +  (if (i1 + 1 < 10) "0" else "") + (i1 + 1) + "-" + (if (i2 < 10) "0" else "") + i2 + "T"
-            Toast.makeText(applicationContext, date, Toast.LENGTH_SHORT).show()
             service.getCountryData(country, date + "00:00:00Z", date + "23:59:59Z").enqueue(callbackCountry)
         }
+
+        calendarView.setOnDateChangeListener(DatechangeListener)
+        DatechangeListener.onSelectedDayChange(calendarView,Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH)
     }
 }
